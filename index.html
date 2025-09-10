@@ -1,360 +1,678 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amor</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./myStyle.css">
-  </head>
-  <body>
-    <div class="night"></div>
-    <div class="not-loaded flowers">
-      <div class="flower flower--1">
-        <div class="flower__leafs flower__leafs--1">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación: Choque Séptico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            background-color: #f0f4f8;
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+            background-color: #0d1b2a; /* Dark blue background */
+            color: #e0e1dd;
+        }
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .slide-content {
+            width: 100%;
+            max-width: 1200px;
+            background-color: rgba(23, 42, 58, 0.8); /* Slightly lighter transparent background */
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border: 1px solid #415a77;
+        }
+        .slide-title {
+            color: #74c69d; /* Accent green color */
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #415a77;
+        }
+        ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+        li {
+            margin-bottom: 0.75rem;
+        }
+        strong {
+            color: #a9d6e5;
+        }
+        .nav-button {
+            position: fixed;
+            bottom: 2rem;
+            transform: translateY(-50%);
+            background-color: #74c69d;
+            color: #0d1b2a;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(116, 198, 157, 0.4);
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-button:hover {
+            transform: translateY(-50%) scale(1.05);
+            box-shadow: 0 6px 20px rgba(116, 198, 157, 0.5);
+        }
+        #prevBtn {
+            left: 2rem;
+        }
+        #nextBtn {
+            right: 2rem;
+        }
+        .slide-counter {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #e0e1dd;
+            background-color: rgba(23, 42, 58, 0.8);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .slide-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        table {
+            width: 100%;
+            margin-top: 1rem;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #415a77;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        th {
+            background-color: #1b263b;
+        }
+    </style>
+</head>
+<body>
 
-          <div class="flower__white-circle"></div>
-
-          <div class="flower__light flower__light--1"></div>
-          <div class="flower__light flower__light--2"></div>
-          <div class="flower__light flower__light--3"></div>
-          <div class="flower__light flower__light--4"></div>
-          <div class="flower__light flower__light--5"></div>
-          <div class="flower__light flower__light--6"></div>
-          <div class="flower__light flower__light--7"></div>
-          <div class="flower__light flower__light--8"></div>
+    <!-- Slide 1 -->
+    <div class="slide active">
+        <img src="https://placehold.co/1920x1080/0d1b2a/e0e1dd?text=+" class="slide-bg-image" alt="Fondo abstracto">
+        <div class="text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/ISSSTE.svg/1200px-ISSSTE.svg.png" alt="Logo ISSSTE" class="h-24 mx-auto mb-8" onerror="this.onerror=null;this.src='https://placehold.co/200x100/ffffff/000000?text=Logo+ISSSTE';">
+            <h1 class="text-5xl font-bold text-white mb-4">Choque Séptico: Abordaje Basado en la Evidencia a Partir de un Caso Clínico</h1>
+            <p class="text-2xl text-gray-300">Brandon, Médico Pasante de Servicio Social</p>
+            <p class="text-xl text-gray-400 mt-2">ISSSTE</p>
+            <p class="text-lg text-gray-500 mt-8">[Fecha de la Exposición]</p>
         </div>
-        <div class="flower__line">
-          <div class="flower__line__leaf flower__line__leaf--1"></div>
-          <div class="flower__line__leaf flower__line__leaf--2"></div>
-          <div class="flower__line__leaf flower__line__leaf--3"></div>
-          <div class="flower__line__leaf flower__line__leaf--4"></div>
-          <div class="flower__line__leaf flower__line__leaf--5"></div>
-          <div class="flower__line__leaf flower__line__leaf--6"></div>
-        </div>
-      </div>
-
-      <div class="flower flower--2">
-        <div class="flower__leafs flower__leafs--2">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__white-circle"></div>
-
-          <div class="flower__light flower__light--1"></div>
-          <div class="flower__light flower__light--2"></div>
-          <div class="flower__light flower__light--3"></div>
-          <div class="flower__light flower__light--4"></div>
-          <div class="flower__light flower__light--5"></div>
-          <div class="flower__light flower__light--6"></div>
-          <div class="flower__light flower__light--7"></div>
-          <div class="flower__light flower__light--8"></div>
-        </div>
-        <div class="flower__line">
-          <div class="flower__line__leaf flower__line__leaf--1"></div>
-          <div class="flower__line__leaf flower__line__leaf--2"></div>
-          <div class="flower__line__leaf flower__line__leaf--3"></div>
-          <div class="flower__line__leaf flower__line__leaf--4"></div>
-        </div>
-      </div>
-
-      <div class="flower flower--3">
-        <div class="flower__leafs flower__leafs--3">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__white-circle"></div>
-
-          <div class="flower__light flower__light--1"></div>
-          <div class="flower__light flower__light--2"></div>
-          <div class="flower__light flower__light--3"></div>
-          <div class="flower__light flower__light--4"></div>
-          <div class="flower__light flower__light--5"></div>
-          <div class="flower__light flower__light--6"></div>
-          <div class="flower__light flower__light--7"></div>
-          <div class="flower__light flower__light--8"></div>
-        </div>
-        <div class="flower__line">
-          <div class="flower__line__leaf flower__line__leaf--1"></div>
-          <div class="flower__line__leaf flower__line__leaf--2"></div>
-          <div class="flower__line__leaf flower__line__leaf--3"></div>
-          <div class="flower__line__leaf flower__line__leaf--4"></div>
-        </div>
-      </div>
-
-      <div class="grow-ans" style="--d: 1.2s">
-        <div class="flower__g-long">
-          <div class="flower__g-long__top"></div>
-          <div class="flower__g-long__bottom"></div>
-        </div>
-      </div>
-
-      <div class="growing-grass">
-        <div class="flower__grass flower__grass--1">
-          <div class="flower__grass--top"></div>
-          <div class="flower__grass--bottom"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--1"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--2"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--3"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--4"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--5"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--6"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--7"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--8"></div>
-          <div class="flower__grass__overlay"></div>
-        </div>
-      </div>
-
-      <div class="growing-grass">
-        <div class="flower__grass flower__grass--2">
-          <div class="flower__grass--top"></div>
-          <div class="flower__grass--bottom"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--1"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--2"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--3"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--4"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--5"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--6"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--7"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--8"></div>
-          <div class="flower__grass__overlay"></div>
-        </div>
-      </div>
-
-      <div class="grow-ans" style="--d: 2.4s">
-        <div class="flower__g-right flower__g-right--1">
-          <div class="leaf"></div>
-        </div>
-      </div>
-
-      <div class="grow-ans" style="--d: 2.8s">
-        <div class="flower__g-right flower__g-right--2">
-          <div class="leaf"></div>
-        </div>
-      </div>
-
-      <div class="grow-ans" style="--d: 2.8s">
-        <div class="flower__g-front">
-          <div
-            class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--1"
-          >
-            <div class="flower__g-front__leaf"></div>
-          </div>
-          <div
-            class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--2"
-          >
-            <div class="flower__g-front__leaf"></div>
-          </div>
-          <div
-            class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--3"
-          >
-            <div class="flower__g-front__leaf"></div>
-          </div>
-          <div
-            class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--4"
-          >
-            <div class="flower__g-front__leaf"></div>
-          </div>
-          <div
-            class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--5"
-          >
-            <div class="flower__g-front__leaf"></div>
-          </div>
-          <div
-            class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--6"
-          >
-            <div class="flower__g-front__leaf"></div>
-          </div>
-          <div
-            class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--7"
-          >
-            <div class="flower__g-front__leaf"></div>
-          </div>
-          <div
-            class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--8"
-          >
-            <div class="flower__g-front__leaf"></div>
-          </div>
-          <div class="flower__g-front__line"></div>
-        </div>
-      </div>
-
-      <div class="grow-ans" style="--d: 3.2s">
-        <div class="flower__g-fr">
-          <div class="leaf"></div>
-          <div class="flower__g-fr__leaf flower__g-fr__leaf--1"></div>
-          <div class="flower__g-fr__leaf flower__g-fr__leaf--2"></div>
-          <div class="flower__g-fr__leaf flower__g-fr__leaf--3"></div>
-          <div class="flower__g-fr__leaf flower__g-fr__leaf--4"></div>
-          <div class="flower__g-fr__leaf flower__g-fr__leaf--5"></div>
-          <div class="flower__g-fr__leaf flower__g-fr__leaf--6"></div>
-          <div class="flower__g-fr__leaf flower__g-fr__leaf--7"></div>
-          <div class="flower__g-fr__leaf flower__g-fr__leaf--8"></div>
-        </div>
-      </div>
-
-      <div class="long-g long-g--0">
-        <div class="grow-ans" style="--d: 3s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d: 2.2s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d: 3.4s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d: 3.6s">
-          <div class="leaf leaf--3"></div>
-        </div>
-      </div>
-
-      <div class="long-g long-g--1">
-        <div class="grow-ans" style="--d: 3.6s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d: 3.8s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d: 4s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d: 4.2s">
-          <div class="leaf leaf--3"></div>
-        </div>
-      </div>
-
-      <div class="long-g long-g--2">
-        <div class="grow-ans" style="--d: 4s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d: 4.2s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d: 4.4s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d: 4.6s">
-          <div class="leaf leaf--3"></div>
-        </div>
-      </div>
-
-      <div class="long-g long-g--3">
-        <div class="grow-ans" style="--d: 4s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d: 4.2s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d: 3s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d: 3.6s">
-          <div class="leaf leaf--3"></div>
-        </div>
-      </div>
-
-      <div class="long-g long-g--4">
-        <div class="grow-ans" style="--d: 4s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d: 4.2s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d: 3s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d: 3.6s">
-          <div class="leaf leaf--3"></div>
-        </div>
-      </div>
-
-      <div class="long-g long-g--5">
-        <div class="grow-ans" style="--d: 4s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d: 4.2s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d: 3s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d: 3.6s">
-          <div class="leaf leaf--3"></div>
-        </div>
-      </div>
-
-      <div class="long-g long-g--6">
-        <div class="grow-ans" style="--d: 4.2s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d: 4.4s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d: 4.6s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d: 4.8s">
-          <div class="leaf leaf--3"></div>
-        </div>
-      </div>
-
-      <div class="long-g long-g--7">
-        <div class="grow-ans" style="--d: 3s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d: 3.2s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d: 3.5s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d: 3.6s">
-          <div class="leaf leaf--3"></div>
-        </div>
-      </div>
     </div>
 
-    <div class="inital-box" id="inital-box">
-      <div class="title-present">
-        <div>
-          <span></span>
-          <span></span>
-          <span>H</span>
-          <span>O</span>
-          <span>L</span>
-          <span>A</span>
-          <span></span>
-          <span></span>
+    <!-- Slide 2 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Definiendo el Problema: Los Criterios Sepsis-3</h2>
+            <ul class="text-xl space-y-4">
+                <li><strong>Sepsis:</strong> Disfunción orgánica potencialmente mortal causada por una respuesta desregulada del huésped a la infección.</li>
+                <li><strong>Disfunción Orgánica:</strong> Aumento agudo en la puntuación SOFA total ≥ 2 puntos.</li>
+                <li><strong>Choque Séptico:</strong> Sepsis con hipotensión persistente que requiere vasopresores para mantener una PAM ≥ 65 mmHg <strong>Y</strong> un lactato sérico > 2 mmol/L a pesar de una reanimación con volumen adecuada.</li>
+                <li><strong>qSOFA:</strong> Herramienta de tamizaje para pacientes fuera de la UCI con sospecha de infección, para identificar a aquellos con mayor riesgo de malos resultados. No es un criterio diagnóstico.</li>
+            </ul>
         </div>
-        <div>
-          <span>M</span>
-          <span>I</span>
-          <span class="letter-space"></span>
-          <span>C</span>
-          <span>I</span>
-          <span>E</span>
-          <span>L</span>
-          <span>O</span>
-        </div>
-      </div>
-      <a href="#" id="btnInicial">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Da click!
-      </a>
     </div>
 
-    <div class="message-box">
-      <h3 id="message"></h3>
+    <!-- Slide 3 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Ficha de Identificación</h2>
+            <ul class="text-2xl space-y-3">
+                <li><strong>Nombre:</strong> J.L.R.M.</li>
+                <li><strong>Edad:</strong> 72 años</li>
+                <li><strong>Género:</strong> Masculino</li>
+                <li><strong>Ocupación:</strong> Jubilado (anteriormente trabajador de construcción)</li>
+                <li><strong>Lugar de Residencia:</strong> Ciudad de México</li>
+                <li><strong>Afiliación:</strong> ISSSTE</li>
+            </ul>
+        </div>
     </div>
-    <script src="java.js"></script>
-  </body>
+
+    <!-- Slide 4 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Antecedentes de Importancia</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-lg">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2 text-[#a9d6e5]">Personales Patológicos:</h3>
+                    <ul class="space-y-2">
+                        <li>Diabetes Mellitus tipo 2 de 20 años de evolución. Tto: metformina/glibenclamida. Última HbA1c: 8.9%.</li>
+                        <li>Hipertensión Arterial Sistémica de 15 años de evolución. Tto: losartán.</li>
+                        <li>Hiperplasia Prostática Benigna (HPB) de 5 años de evolución. Tto: tamsulosina.</li>
+                        <li>Enfermedad Renal Crónica (ERC) G3a A2 (KDIGO). Creatinina basal: 1.5 mg/dL (TFGe ~55 mL/min/1.73m²).</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2 text-[#a9d6e5]">Otros:</h3>
+                    <ul class="space-y-2">
+                        <li><strong>Quirúrgicos:</strong> Hernioplastia inguinal derecha hace 10 años.</li>
+                        <li><strong>Alergias:</strong> Negadas.</li>
+                        <li><strong>Toxicomanías:</strong> Tabaquismo suspendido (IT: 15 paquetes-año). Alcoholismo ocasional.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Padecimiento Actual</h2>
+            <ul class="text-xl space-y-4">
+                <li>Paciente traído a Urgencias por familiar.</li>
+                <li>Inicia hace <strong>72 horas</strong> con disuria, polaquiuria y tenesmo vesical.</li>
+                <li>Hace <strong>48 horas</strong> se agrega fiebre no cuantificada, escalofríos y malestar general.</li>
+                <li>Hace <strong>24 horas</strong> presenta desorientación, somnolencia e hiporexia.</li>
+                <li class="bg-red-900/50 p-3 rounded-lg">El día de su ingreso es encontrado letárgico, con dificultad respiratoria y <strong>anuria de 12 horas</strong> de evolución.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 6 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Triage y Signos Vitales Iniciales</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-xl">
+                <div>
+                    <ul class="space-y-2">
+                        <li><strong>TA:</strong> 85/40 mmHg (PAM: 55 mmHg)</li>
+                        <li><strong>FC:</strong> 125 lpm</li>
+                        <li><strong>FR:</strong> 28 rpm</li>
+                        <li><strong>Temp:</strong> 38.5 °C</li>
+                        <li><strong>SatO₂:</strong> 89% (aire ambiente)</li>
+                        <li><strong>Glucemia capilar:</strong> 250 mg/dL</li>
+                        <li><strong>Estado de conciencia:</strong> Glasgow 13/15</li>
+                    </ul>
+                </div>
+                <div class="bg-[#1b263b] p-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-3 text-[#a9d6e5]">Cálculo de qSOFA:</h3>
+                    <ul class="space-y-2">
+                        <li>Alteración del estado mental (GCS < 15): <strong>+1 punto</strong></li>
+                        <li>Frecuencia respiratoria ≥ 22: <strong>+1 punto</strong></li>
+                        <li>Presión arterial sistólica ≤ 100: <strong>+1 punto</strong></li>
+                    </ul>
+                    <p class="mt-4 text-center text-3xl font-bold bg-green-500/80 text-white py-2 rounded-md">Total qSOFA: 3 puntos</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 7 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Exploración Física Dirigida</h2>
+            <ul class="text-xl space-y-3">
+                <li><strong>General:</strong> Paciente diaforético, con palidez de tegumentos y llenado capilar de 4 segundos.</li>
+                <li><strong>Neurológico:</strong> Somnoliento, desorientado (GCS 13: O4, V4, M5). Sin focalización.</li>
+                <li><strong>Cardiopulmonar:</strong> Taquicardia rítmica. Estertores crepitantes bibasales. Taquipnea con uso de musculatura accesoria.</li>
+                <li><strong>Abdomen:</strong> Dolor a la palpación en hipogastrio y flancos. Giordano bilateral positivo.</li>
+                <li><strong>Extremidades:</strong> Frías, pálidas, pulsos periféricos débiles. <strong>Livedo reticularis</strong> en rodillas.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Slide 8 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Paraclínicos Iniciales Solicitados</h2>
+             <div class="grid grid-cols-2 gap-x-12 gap-y-6 text-xl">
+                <p>Biometría Hemática Completa (BHC)</p>
+                <p>Química Sanguínea (QS)</p>
+                <p>Electrolitos Séricos (ES)</p>
+                <p>Pruebas de Función Hepática (PFH)</p>
+                <p>Tiempos de Coagulación (TP, TPT)</p>
+                <p>Gasometría Arterial y Lactato Sérico</p>
+                <p>Examen General de Orina (EGO)</p>
+                <p>Hemocultivos (x2) y Urocultivo</p>
+                <p>Radiografía de Tórax</p>
+                <p>Ultrasonido renal y vesical</p>
+             </div>
+        </div>
+    </div>
+    
+    <!-- Slide 9 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Resultados de Laboratorio Relevantes</h2>
+            <ul class="text-xl space-y-3">
+                <li><strong>BHC:</strong> Leucocitos 18,500/μL (Neutrófilos 85%, Bandas 12%), Plaquetas 95,000/μL.</li>
+                <li><strong>QS:</strong> Glucosa 280 mg/dL, BUN 60 mg/dL, Creatinina 2.8 mg/dL.</li>
+                <li><strong>Gasometría Arterial (O₂ 4L/min):</strong> pH 7.25, pCO₂ 30 mmHg, pO₂ 65 mmHg, HCO₃ 14 mEq/L, EB -10.</li>
+                <li><strong>Lactato Sérico:</strong> <span class="bg-red-500 text-white px-2 py-1 rounded">4.5 mmol/L.</span></li>
+                <li><strong>PFH:</strong> Bilirrubina total 2.1 mg/dL.</li>
+                <li><strong>Tiempos:</strong> INR 1.5.</li>
+                <li><strong>EGO:</strong> Turbio, Leucocitos >50/campo, Nitritos positivos, Bacterias abundantes.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Slide 10 -->
+    <div class="slide">
+        <div class="slide-content flex flex-col md:flex-row items-center gap-8">
+            <div class="w-full md:w-1/2">
+                <h2 class="slide-title text-3xl">Estudios de Imagen</h2>
+                <ul class="text-xl space-y-4">
+                    <li><strong>Radiografía de Tórax:</strong> Sin consolidaciones evidentes. Datos de redistribución de flujo.</li>
+                    <li><strong>Ultrasonido Renal y Vesical:</strong> Dilatación del sistema colector renal derecho (hidronefrosis grado II). Vejiga con paredes engrosadas. Próstata aumentada de tamaño.</li>
+                </ul>
+            </div>
+            <div class="w-full md:w-1/2">
+                 <img src="https://prod-images-static.radiopaedia.org/images/34316880/e5b512c1e879a9572c2ff37255ee98_big_gallery.jpeg" alt="" class="rounded-lg shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1b263b/e0e1dd?text=Ultrasonido+con+Hidronefrosis';">
+                 <p class="text-center text-sm mt-2 text-gray-400">Imagen representativa de hidronefrosis en ultrasonido.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 11 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Estudios Microbiológicos y Diagnóstico</h2>
+            <ul class="text-xl space-y-4">
+                <li><strong>Tinción de Gram de Orina:</strong> Bacilos Gram negativos abundantes.</li>
+                <li><strong>Hemocultivos:</strong> Pendientes.</li>
+                <li><strong>Urocultivo:</strong> Pendiente.</li>
+            </ul>
+            <div class="mt-8 bg-[#1b263b] p-6 rounded-lg text-center">
+                <h3 class="text-2xl font-semibold mb-2 text-[#a9d6e5]">Diagnóstico de trabajo:</h3>
+                <p class="text-3xl font-bold">Choque séptico de foco urinario, secundario a uropatía obstructiva.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Slide 12 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Manejo Inicial en Urgencias (La "Hora-1")</h2>
+            <ol class="text-xl space-y-4 list-decimal list-inside">
+                <li><strong>Medir lactato:</strong> Realizado (4.5 mmol/L).</li>
+                <li><strong>Obtener hemocultivos:</strong> Realizado antes de antibióticos.</li>
+                <li><strong>Administrar antibióticos de amplio espectro:</strong> Se inicia Piperacilina/Tazobactam 4.5g IV.</li>
+                <li><strong>Iniciar reanimación hídrica:</strong> Carga rápida con 30 mL/kg de solución Hartmann (2100 mL en 2h).</li>
+                <li><strong>Aplicar vasopresores:</strong> Por PAM persistente < 65 mmHg, se inicia Norepinefrina por vía periférica.</li>
+            </ol>
+            <p class="text-right mt-6 text-gray-400 text-sm">Referencia: Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021.</p>
+        </div>
+    </div>
+    
+    <!-- Slide 13 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Ingreso a UCI y Cálculo de SOFA</h2>
+            <div class="grid grid-cols-2 gap-8">
+                <ul class="text-xl mt-4">
+                    <li>Ingreso a UCI a las 3 horas de su llegada a Urgencias.</li>
+                    <li>Colocación de catéter venoso central y línea arterial.</li>
+                </ul>
+                <div class="bg-[#1b263b] p-4 rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-3 text-center text-[#a9d6e5]">Cálculo del SOFA Score</h3>
+                    <ul class="text-lg grid grid-cols-2 gap-2">
+                        <li><strong>Respiración (PaO₂/FiO₂):</strong> 185 → <strong>3 pts</strong></li>
+                        <li><strong>Coagulación (Plaquetas):</strong> 95,000 → <strong>2 pts</strong></li>
+                        <li><strong>Hígado (Bilirrubina):</strong> 2.1 mg/dL → <strong>2 pts</strong></li>
+                        <li><strong>Cardiovascular (Vasopresor):</strong> NE → <strong>3 pts</strong></li>
+                        <li><strong>SNC (Glasgow):</strong> 13 → <strong>1 pto</strong></li>
+                        <li><strong>Renal (Creatinina):</strong> 2.8 mg/dL → <strong>2 pts</strong></li>
+                    </ul>
+                    <p class="mt-4 text-center text-3xl font-bold bg-red-500/80 text-white py-2 rounded-md">SOFA Total: 13 puntos</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Slide 14 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Evolución en las Primeras 24 Horas</h2>
+            <ul class="text-xl space-y-3">
+                <li><strong>Control del Foco:</strong> Urología coloca sonda de cistostomía suprapúbica de urgencia.</li>
+                <li><strong>Soporte Hemodinámico:</strong> Requiere aumento de Norepinefrina y adición de Vasopresina.</li>
+                <li><strong>Soporte Ventilatorio:</strong> Intubación orotraqueal por fatiga muscular.</li>
+                <li><strong>Manejo Adyuvante:</strong> Se inicia Hidrocortisona por choque refractario.</li>
+                <li><strong>Reporte de Cultivos (48h):</strong> <em>Escherichia coli</em> BLEE en sangre y orina.</li>
+                <li><strong>Ajuste Terapéutico:</strong> Se desescala antibioticoterapia a Meropenem.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 15 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Discusión: El "Hour-1 Bundle", Pilar del Cuidado</h2>
+            <p class="text-xl mb-4">Paquete de 5 intervenciones críticas que deben iniciarse de inmediato al reconocer el choque séptico.</p>
+            <ol class="text-xl space-y-3 list-decimal list-inside">
+                <li>Medir lactato (y re-medir si > 2 mmol/L).</li>
+                <li>Tomar hemocultivos.</li>
+                <li>Administrar antibióticos de amplio espectro.</li>
+                <li>Iniciar 30 mL/kg de cristaloides para hipotensión o lactato ≥ 4 mmol/L.</li>
+                <li>Aplicar vasopresores si hay hipotensión para mantener PAM ≥ 65 mmHg.</li>
+            </ol>
+            <p class="text-right mt-4 text-gray-400 text-sm">Evans L, et al. Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021. Crit Care Med. 2021.</p>
+        </div>
+    </div>
+
+    <!-- Slide 16 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Discusión: Reanimación Hídrica - ¿Balanceados vs. Salina?</h2>
+            <ul class="text-xl space-y-4">
+                <li><strong>Guías SSC 2021:</strong> Recomiendan cristaloides como primera línea. Sugieren (débilmente) el uso de cristaloides balanceados (Hartmann, Ringer Lactato) sobre solución salina 0.9%.</li>
+                <li><strong>Evidencia de Meta-análisis (2020-2024):</strong>
+                    <ul class="list-disc pl-8 mt-2 space-y-2">
+                        <li>Los cristaloides balanceados se asocian con <strong>menor mortalidad</strong> por todas las causas.</li>
+                        <li>Se asocian con menor incidencia de eventos adversos renales mayores (MAKE).</li>
+                        <li>Reducen la estancia en UCI y hospitalaria.</li>
+                    </ul>
+                </li>
+                <li><strong>Mecanismo de Daño de la Solución Salina:</strong> La carga suprafisiológica de cloruro puede causar acidosis metabólica hiperclorémica y vasoconstricción de la arteriola aferente renal.</li>
+            </ul>
+            <p class="text-right mt-4 text-gray-400 text-sm">Liu C, et al. Efficacy and safety of different resuscitation fluids for patients with septic shock: a network meta-analysis... Front Med (Lausanne). 2024.</p>
+        </div>
+    </div>
+    
+    <!-- Slide 17 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Discusión del Caso: Manejo de Fluidos</h2>
+             <ul class="text-xl space-y-4">
+                <li><strong>¿Qué se hizo?</strong> Se administraron 30 mL/kg de Solución Hartmann.</li>
+                <li><strong>¿Fue correcto?</strong> Sí. La elección del cristaloide balanceado se alinea con la mejor evidencia disponible, minimizando el riesgo de LRA en un paciente con ERC preexistente.</li>
+                <li><strong>Punto a considerar: ¿Liberal vs. Restrictivo?</strong>
+                    <ul class="list-disc pl-8 mt-2 space-y-2">
+                        <li>La carga inicial de 30 mL/kg es una recomendación, no un dogma.</li>
+                        <li>Posteriormente, la administración debe ser juiciosa para evitar sobrecarga hídrica.</li>
+                        <li>Meta-análisis recientes sugieren que una estrategia restrictiva post-reanimación se asocia con menor incidencia de LRA severa.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 18 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Discusión: Vasopresor de Elección - La Evidencia para Norepinefrina</h2>
+             <ul class="text-xl space-y-4">
+                <li><strong>Recomendación Fuerte (SSC 2021):</strong> Norepinefrina es el vasopresor de primera línea.</li>
+                <li><strong>Farmacología:</strong> Potente agonista α-1 (vasoconstricción) con modesto efecto β-1 (inotropismo). Aumenta la PAM con menor riesgo de taquiarritmias.</li>
+                <li><strong>Evidencia Comparativa:</strong> Meta-análisis demuestran menor mortalidad y menor incidencia de arritmias en comparación con Dopamina.</li>
+                <li><strong>Meta de PAM:</strong> La meta inicial recomendada es una PAM de 65 mmHg. Metas más altas no han demostrado beneficio.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 19 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Discusión: Agentes de Segunda Línea - Rol de la Vasopresina</h2>
+            <ul class="text-xl space-y-4">
+                <li><strong>Recomendación SSC 2021:</strong> Sugiere añadir Vasopresina (hasta 0.03 U/min) en lugar de escalar la dosis de Norepinefrina si la PAM es inadecuada.</li>
+                <li><strong>Mecanismo:</strong> Actúa sobre receptores V1 (vasoconstricción no adrenérgica). Se usa a dosis fija.</li>
+                <li><strong>Beneficios Potenciales:</strong>
+                    <ul class="list-disc pl-8 mt-2 space-y-2">
+                        <li>Efecto ahorrador de catecolaminas.</li>
+                        <li>Puede mejorar la función renal (vasoconstricción de la arteriola eferente).</li>
+                        <li>Corrige la deficiencia relativa de vasopresina en el choque séptico.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 20 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Discusión del Caso: Estrategia Vasopresora</h2>
+            <p class="text-lg mb-4"><strong>¿Qué se hizo?</strong> Se inició Norepinefrina por vía periférica y, ante requerimientos crecientes, se añadió Vasopresina. <strong>¿Fue correcto?</strong> Sí. El abordaje sigue las guías. El inicio periférico evitó retrasos. La adición de vasopresina fue adecuada para el choque refractario.</p>
+            <h3 class="text-xl font-semibold mt-4 mb-2 text-center text-[#a9d6e5]">Propiedades Farmacológicas de Vasopresores Comunes</h3>
+            <table class="text-base">
+                <thead>
+                    <tr><th>Fármaco</th><th>Receptor α1</th><th>Receptor β1</th><th>Receptor V1</th><th>Efecto Principal</th><th>Consideraciones Clínicas</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Norepinefrina</strong></td><td class="text-center">++++</td><td class="text-center">++</td><td class="text-center">-</td><td>Vasoconstricción</td><td>Primera línea. Menor riesgo de arritmias que dopamina.</td></tr>
+                    <tr><td><strong>Vasopresina</strong></td><td class="text-center">-</td><td class="text-center">-</td><td class="text-center">++++</td><td>Vasoconstricción</td><td>Segunda línea. Dosis fija. Efecto ahorrador de catecolaminas.</td></tr>
+                    <tr><td><strong>Epinefrina</strong></td><td class="text-center">+++</td><td class="text-center">+++</td><td class="text-center">-</td><td>Vasoconstricción, Inotropismo</td><td>Alternativa. Puede aumentar lactato y riesgo de arritmias.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Slide 21 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Discusión: Antibióticos - El Tiempo es Tejido</h2>
+            <ul class="text-xl space-y-4">
+                <li><strong>En Choque Séptico:</strong> Recomendación fuerte de administrar antibióticos <strong>idealmente dentro de 1 hora</strong> desde el reconocimiento. Cada hora de retraso aumenta la mortalidad.</li>
+                <li><strong>En Sepsis (sin choque):</strong> Se sugiere un abordaje medido. Si la sepsis es <em>posible</em> pero no definitiva, se puede realizar una investigación rápida y administrar antibióticos <strong>dentro de 3 horas</strong> si la sospecha persiste.</li>
+            </ul>
+            <p class="text-right mt-6 text-gray-400 text-sm">Lee SH, et al. Timing of antibiotic administration in patients with sepsis and septic shock: a systematic review and meta-analysis. Korean J Intern Med. 2025.</p>
+        </div>
+    </div>
+
+    <!-- Slide 22 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Discusión: Elección del Régimen Empírico</h2>
+             <ul class="text-lg mb-4 list-disc">
+                <li><strong>Principios:</strong> Cubrir patógenos probables según foco, epidemiología local y factores de riesgo para MDR.</li>
+                <li><strong>Desescalación:</strong> Reevaluar diariamente y ajustar la terapia según cultivos y respuesta clínica.</li>
+            </ul>
+            <h3 class="text-xl font-semibold mt-4 mb-2 text-center text-[#a9d6e5]">Regímenes Empíricos para Urosepsis Grave (Hospitalaria)</h3>
+            <table class="text-base">
+                <thead>
+                    <tr><th>Perfil del Paciente</th><th>Régimen Sugerido</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Sin factores de riesgo para MDR</strong></td><td>Cefalosporina de 3ª gen. (ej. Ceftriaxona)</td></tr>
+                    <tr><td><strong>Riesgo bajo/moderado para MDR</strong></td><td>Piperacilina/Tazobactam o Cefepime</td></tr>
+                    <tr><td><strong>Riesgo alto para MDR (ej. BLEE)</strong></td><td>Carbapenémico (ej. Meropenem, Ertapenem)</td></tr>
+                    <tr><td><strong>Paciente en choque séptico</strong></td><td>Combinación (ej. Carbapenémico + Aminoglucósido)</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Slide 23 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Discusión: La Importancia del Control del Foco</h2>
+             <ul class="text-xl space-y-4">
+                <li><strong>Definición:</strong> "Una intervención anatómica específica para erradicar un foco de infección, controlar la contaminación microbiana continua y restaurar la anatomía y función normales".</li>
+                <li>Es un pilar fundamental del manejo. Los antibióticos no pueden esterilizar un absceso no drenado o una vía urinaria obstruida.</li>
+                <li><strong>Timing:</strong> Debe realizarse tan pronto como sea posible. Retrasos >6-12 horas se asocian a un aumento dramático de la mortalidad.</li>
+                <li class="bg-yellow-800/50 p-3 rounded-lg"><strong>En nuestro caso:</strong> La derivación urinaria mediante cistostomía fue la intervención clave.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 24 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Discusión del Caso: Estrategia Antimicrobiana y Control del Foco</h2>
+            <ul class="text-xl space-y-4">
+                <li><strong>¿Qué se hizo?</strong> Se inició Pip/Tazo en la primera hora. Se realizó derivación urinaria de urgencia. Se desescaló a Meropenem según antibiograma.</li>
+                <li class="mt-6">
+                    <strong>¿Fue correcto?</strong> <span class="text-green-400 font-bold text-2xl">Sí. El manejo fue ejemplar.</span>
+                    <ul class="list-disc pl-8 mt-2 space-y-2 text-lg">
+                        <li>El <em>timing</em> del antibiótico fue el adecuado para un paciente en shock.</li>
+                        <li>La identificación y control rápido del foco fue clave para la supervivencia.</li>
+                        <li>La desescalación es un ejemplo de buena práctica de <em>stewardship</em> antibiótico.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 25 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Discusión: Corticosteroides en Choque Séptico - ¿Cuándo y Cómo?</h2>
+            <ul class="text-xl space-y-3">
+                <li><strong>Indicación:</strong> Se sugiere su uso en pacientes con choque séptico y requerimiento continuo de vasopresores.</li>
+                <li><strong>Evidencia de Meta-análisis (2024):</strong>
+                    <ul class="list-disc pl-8 mt-2 space-y-2">
+                        <li>Probablemente <strong>reducen la mortalidad</strong> a corto plazo (RR 0.93).</li>
+                        <li>Aumentan la probabilidad de <strong>reversión del choque</strong>.</li>
+                    </ul>
+                </li>
+                <li><strong>Dosis Óptima:</strong> Hidrocortisona IV ~200 mg/día (ej. 50 mg c/6h). Dosis > 260 mg/día no muestran beneficio adicional.</li>
+                <li><strong>Efectos Adversos:</strong> Hiperglucemia, hipernatremia, debilidad neuromuscular.</li>
+            </ul>
+            <p class="text-right mt-4 text-gray-400 text-sm">Rochwerg B, et al. Corticosteroids for sepsis, septic shock... a systematic review, meta-analysis... Crit Care. 2024.</p>
+        </div>
+    </div>
+
+    <!-- Slide 26 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Discusión: Cuidados de Soporte en la UCI</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-xl">
+                 <ul class="space-y-4">
+                    <li><strong>Control Glucémico:</strong> Mantener glucosa < 180 mg/dL con infusión de insulina.</li>
+                    <li><strong>Profilaxis de TVP:</strong> Heparinas de bajo peso molecular o no fraccionada.</li>
+                    <li><strong>Profilaxis de Úlceras por Estrés:</strong> Inhibidores de bomba de protones o antagonistas H2.</li>
+                 </ul>
+                 <ul class="space-y-4">
+                    <li><strong>Nutrición:</strong> Iniciar nutrición enteral temprana y trófica.</li>
+                    <li><strong>Sedación y Analgesia:</strong> Evitar sedación profunda y bloqueadores neuromusculares si es posible.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 27 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Resolución del Caso y Desenlace</h2>
+             <ul class="text-xl space-y-3">
+                <li>El paciente presentó mejoría gradual. Destete de vasopresores al día 5 y de ventilación mecánica al día 7.</li>
+                <li>Completó 10 días de Meropenem. La función renal retornó a su basal.</li>
+                <li>Egresado de UCI al día 10. Se programó para RTUP de forma electiva.</li>
+                <li class="bg-blue-900/50 p-3 rounded-lg mt-4"><strong>Énfasis en el manejo post-UCI:</strong> Las guías 2021 destacan la importancia de discutir metas de cuidado, planificar el alta y manejar el <strong>síndrome post-sepsis</strong> (alteraciones físicas, cognitivas y emocionales).</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 28 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Puntos Clave para la Práctica Clínica</h2>
+            <ol class="text-2xl space-y-4 list-decimal list-inside">
+                <li><strong>Piense en Sepsis:</strong> La sepsis es disfunción orgánica. Use SOFA para diagnosticar y estratificar.</li>
+                <li><strong>Actúe Rápido:</strong> El "Hour-1 Bundle" no es negociable en el choque séptico.</li>
+                <li><strong>Resucite con Inteligencia:</strong> Use cristaloides balanceados. Sea juicioso con los fluidos post-reanimación.</li>
+                <li><strong>Norepinefrina Primero:</strong> Es el vasopresor de elección. Añada vasopresina como segundo agente.</li>
+                <li><strong>Controle el Foco:</strong> La resucitación es un puente hacia el control definitivo de la fuente. Es la máxima prioridad.</li>
+                <li><strong>Use la Evidencia:</strong> El manejo del choque séptico evoluciona constantemente.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Slide 29 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title text-3xl">Referencias</h2>
+            <ol class="text-base space-y-2 list-decimal list-inside">
+                <li>Evans L, et al. Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021. *Crit Care Med*. 2021.</li>
+                <li>Liu C, et al. Efficacy and safety of different resuscitation fluids for patients with septic shock: a network meta-analysis of 32 randomized controlled trials. *Front Med (Lausanne)*. 2024.</li>
+                <li>Rochwerg B, et al. Corticosteroids for sepsis, septic shock, or sepsis-related ARDS: a systematic review, meta-analysis, and trial sequential analysis. *Crit Care*. 2024.</li>
+                <li>Lee SH, et al. Timing of antibiotic administration in patients with sepsis and septic shock: a systematic review and meta-analysis. *Korean J Intern Med*. 2025.</li>
+                <li>Legrand M, et al. Vasopressors in septic shock: which, when, and how much? *Ann Transl Med*. 2020.</li>
+                <li>Ye Z, et al. Restrictive versus liberal fluid resuscitation for sepsis-associated hypotension and shock: a meta-analysis. *BMJ Open*. 2025.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Slide 30 -->
+    <div class="slide">
+        <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=1920" class="slide-bg-image" alt="Fondo degradado azul">
+        <div class="text-center">
+            <h1 class="text-7xl font-bold text-white">¿Preguntas?</h1>
+        </div>
+    </div>
+
+
+    <button id="prevBtn" class="nav-button">Anterior</button>
+    <button id="nextBtn" class="nav-button">Siguiente</button>
+    <div id="slideCounter" class="slide-counter"></div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const slideCounter = document.getElementById('slideCounter');
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[n].classList.add('active');
+            updateCounter();
+        }
+
+        function updateCounter() {
+            slideCounter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+
+        // Initialize
+        showSlide(currentSlide);
+    </script>
+</body>
 </html>
+
